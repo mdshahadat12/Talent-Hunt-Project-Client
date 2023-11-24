@@ -6,7 +6,7 @@ import Footer from "../Components/Shared/Footer";
 
 const HomeLayout = () => {
   return (
-    <div className="bg-green-400">
+    <div className="bg-green-40 max-w-7xl mx-auto">
       <Navbar>
         <Outlet />
         <ToastContainer

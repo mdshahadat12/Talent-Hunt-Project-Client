@@ -127,7 +127,7 @@ const Navbar = ({ children }) => {
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="bg-black fixed w-full bg-opacity-20">
+        <div className="bg-black fixed z-20 max-w-7xl w-full bg-opacity-20">
           <div className="w-[90%] mx-auto justify-between px-0 navbar">
             <div className="flex-none lg:hidden">
               <label
