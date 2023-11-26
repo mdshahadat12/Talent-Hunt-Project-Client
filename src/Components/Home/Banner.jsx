@@ -3,9 +3,9 @@ const Banner = () => {
   return (
     <div className="mb-10 relative">
       <img className="w-full h-[550px]" src="https://i.ibb.co/M8zh8Gm/8.png" />
-      <div className="absolute bg-[#ffffff7a] flex inset-y-0 right-0 left-0 items-center">
+      <div className="absolute bg-gray-5 bg-opacity-30 flex inset-y-0 right-0 left-0 items-center">
         <div className="w-full">
-          <h1 className="text-xl md:text-5xl font-bold text-center my-5 md:my-10">
+          <h1 style={{textShadow:'0 0 6px #FF0000, 0 0 5px #0000FF'}} className="text-xl text-white md:text-5xl font-bold text-center my-5 md:my-10">
             I Grow By Helping People In Need
           </h1>
 

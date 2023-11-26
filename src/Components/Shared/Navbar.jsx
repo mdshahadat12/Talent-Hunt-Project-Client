@@ -35,36 +35,13 @@ const Navbar = ({ children }) => {
             ? "active outline outline-2 outline-green-500 rounded-lg font-semibold"
             : ""
         }
-        to={"/myaddedfood"}
+        to={"/dashboard"}
       >
         <li>
-          <p>My Added Food</p>
+          <p>Dashboard</p>
         </li>
       </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive
-            ? "active outline outline-2 outline-green-500 rounded-lg  font-semibold"
-            : ""
-        }
-        to={"/addfood"}
-      >
-        <li>
-          <p>Add Food</p>
-        </li>
-      </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive
-            ? "active outline outline-2 outline-green-500 rounded-lg  font-semibold"
-            : ""
-        }
-        to={"/cart"}
-      >
-        <li>
-          <p>My Odered Food</p>
-        </li>
-      </NavLink>
+      
     </>
   );
   const nav = (
@@ -101,25 +78,14 @@ const Navbar = ({ children }) => {
             ? "active outline outline-2 outline-green-500 rounded-lg  font-semibold"
             : ""
         }
-        to={"/allfood"}
+        to={"/allcontest"}
       >
         <li>
-          <p>All Food</p>
+          <p>All Contest</p>
         </li>
       </NavLink>
 
-      <NavLink
-        className={({ isActive }) =>
-          isActive
-            ? "active outline outline-2 outline-green-500 rounded font-semibold"
-            : ""
-        }
-        to={"/blogs"}
-      >
-        <li>
-          <p>Blogs</p>
-        </li>
-      </NavLink>
+      
     </>
   );
   return (
@@ -127,7 +93,7 @@ const Navbar = ({ children }) => {
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="bg-black fixed z-20 max-w-7xl w-full bg-opacity-20">
+        <div className="bg-black fixed z-20 max-w-7xl w-full bg-opacity-50">
           <div className="w-[90%] mx-auto justify-between px-0 navbar">
             <div className="flex-none lg:hidden">
               <label
@@ -162,7 +128,7 @@ const Navbar = ({ children }) => {
               </Link>
             </div>
             <div className=" hidden lg:block">
-              <ul className="menu menu-horizontal">
+              <ul className="menu text-white menu-horizontal">
                 {/* Navbar menu content here */}
                 {nav}
               </ul>
