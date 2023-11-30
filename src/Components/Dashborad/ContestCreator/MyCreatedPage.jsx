@@ -3,6 +3,7 @@ import { AllContestData, DeleteContest } from "../../../API/Contest";
 import Spiner from "../../Shared/Spiner";
 import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyCreatedPage = () => {
   const { user } = useAuth();
@@ -75,7 +76,9 @@ const MyCreatedPage = () => {
                     </td>
                     <td>{data.status}</td>
                     <td>
+                      <Link to={`/dashboard/selectwinner/${data._id}`}>
                       <button className="btn btn-xs">See!</button>
+                      </Link>
                     </td>
                     {data.status == "pending" ? (
                       <td>

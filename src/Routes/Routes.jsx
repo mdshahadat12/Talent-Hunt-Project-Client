@@ -18,6 +18,7 @@ import Profile from "../Pages/Profile";
 import Win from "../Components/Dashborad/User/Win";
 import Perticipated from "../Components/Dashborad/User/Perticipated";
 import AdminRoute from "./AdminRoute";
+import SelectWinner from "../Components/Dashborad/ContestCreator/SelectWinner";
 
 
 export const router = createBrowserRouter([
@@ -89,6 +90,10 @@ export const router = createBrowserRouter([
             {
                 path:'createdcontest',
                 element:<PrivetRoute><MyCreatedPage/></PrivetRoute> 
+            },
+            {
+                path:'selectwinner/:id',
+                element:<PrivetRoute><SelectWinner/></PrivetRoute> 
             },
         ]
     },

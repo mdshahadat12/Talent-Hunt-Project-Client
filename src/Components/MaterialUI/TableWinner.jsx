@@ -7,7 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-export default function TableData({data}) {
+export default function TableDataWinner({data}) {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
@@ -15,9 +15,8 @@ export default function TableData({data}) {
           <TableRow>
             <TableCell>#</TableCell>
             <TableCell align="left">Name</TableCell>
-            <TableCell align="left">Who Create</TableCell>
+            <TableCell align="left">Winner</TableCell>
             <TableCell align="left">Price</TableCell>
-            <TableCell align="left">Perticipation</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -28,9 +27,8 @@ export default function TableData({data}) {
             >
               <TableCell component="th" scope="row">{idx+1}</TableCell>
               <TableCell align="left">{res.name}</TableCell>
-              <TableCell align="left">{res.email}</TableCell>
+              <TableCell align="left">{res.winner}</TableCell>
               <TableCell align="left">{res.prizemoney}</TableCell>
-              <TableCell align="left">{res.participator}</TableCell>
             </TableRow>
           ))}
         </TableBody>

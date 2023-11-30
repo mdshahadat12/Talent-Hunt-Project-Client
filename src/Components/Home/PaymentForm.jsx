@@ -3,10 +3,10 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js'
 import { useEffect, useState } from 'react'
 import './form.css'
 import { ImSpinner9 } from 'react-icons/im'
-import useAuth from '../../hooks/useAuth'
 import { PaymentToken, SaveInfo, UpdateInfo } from '../../API/PaymentAPI'
 import { toast } from "react-toastify";
 import { useNavigate } from 'react-router-dom'
+import useAuth from '../../Hooks/useAuth'
 
 
 const PaymentForm = ({ data={}, closeModal }) => {
@@ -85,6 +85,7 @@ const PaymentForm = ({ data={}, closeModal }) => {
           participentEmail: user?.email,
           participentName: user?.displayName,
           transactionId: paymentIntent.id,
+          winner:"",
           date: new Date(),
         }
         console.log(info);
@@ -96,7 +97,7 @@ const PaymentForm = ({ data={}, closeModal }) => {
                     if(res.modifiedCount>0){
                         setProcessing(false)
                         toast.success("Successfully Done");
-                        navigate('/dashboard/my-participate')
+                        navigate('/dashboard/participated')
                     }
                 })
             }

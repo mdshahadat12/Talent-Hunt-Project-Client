@@ -38,3 +38,14 @@ export const GetOneContest = async (id) => {
     const {data} = await axiosSecure.get(`/api/v1/contest/${id}`)
     return data
 };
+
+export const GetWinner = async (id) => {
+    const {data} = await axiosSecure.get(`/api/v1/contestwinner/${id}`)
+    return data
+};
+
+export const UpdateWinner = async (email,id) => {
+    console.log(email,id);
+    const {data} = await axiosSecure.put(`/api/v1/contestwinneremail/${id}`,{email})
+    return data
+};
