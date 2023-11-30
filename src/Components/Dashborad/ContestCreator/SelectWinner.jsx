@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import Spiner from "../../Shared/Spiner";
 import { useQuery } from "@tanstack/react-query";
 import { GetWinner, UpdateWinner } from "../../../API/Contest";
+import { toast } from "react-toastify";
 
 
 const SelectWinner = () => {
@@ -24,7 +25,7 @@ const SelectWinner = () => {
         .then(res=>{
             console.log(res);
             if(res.modifiedCount){
-                alert('sss')
+                toast.success('succesfull')
             }
         })
       }
