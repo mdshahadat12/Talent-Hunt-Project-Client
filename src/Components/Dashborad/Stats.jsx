@@ -1,17 +1,26 @@
 import AdminStats from "./Stats/AdminStats";
 import CreatorInfo from "./Stats/CreatorInfo";
 import UserStats from "./Stats/UserStats";
+import Spiner from "../Shared/Spiner";
+import UserRoledata from "../../API/GetData";
 
-export const Role = 'creator'
 const Stats = () => {
-    return (
+  const { role, isLoading } = UserRoledata();
+  console.log(role);
+
+  return (
+    <>
+      {isLoading ? (
+        <Spiner />
+      ) : (
         <div>
-            {Role == 'admin'&& <AdminStats/>}
-            {Role == 'user' && <UserStats/>}
-            {Role == 'creator'&& <CreatorInfo/>}
-            
+          {role == "admin" && <AdminStats />}
+          {role == "user" && <UserStats />}
+          {role == "creator" && <CreatorInfo />}
         </div>
-    );
+      )}
+    </>
+  );
 };
 
 export default Stats;

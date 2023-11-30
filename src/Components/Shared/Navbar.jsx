@@ -1,31 +1,23 @@
-import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-// import { AuthContext } from "../../Context/AuthProvider";
-// import { auth } from "../../config/firebase.config";
-// import { signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 import { toast } from "react-toastify";
-
-// import axios from "axios";
+import useAuth from "../../Hooks/useAuth";
+import { auth } from "../../Config/firebase.config";
+import { ClearToken } from "../../API/UserAPI";
 
 /* eslint-disable react/prop-types */
 const Navbar = ({ children }) => {
-  // const { user, setUser } = useContext(AuthContext);
-  const user = true
+  const { user, setUser } = useAuth()
   // console.log(user);
   // const [user, setUser] = useState(false);
   const handleLogout = () => {
-    toast.success("Logout successful");
-    // signOut(auth)
-    //   .then(() => {
-    //     console.log("Sign-out successful");
-    //     setUser(null);
-    //     axios.post('https://royal-food-server.vercel.app/api/v1/logout',{user},{withCredentials:true})
-    //     .then(data=>console.log(data.data))
-    //     // setClick(!click);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.massage);
-    //   });
+    signOut(auth)
+      .then((res) => {
+        console.log("Sign-out successful",res);
+        ClearToken().then(res=>console.log(res))
+        toast.success('Sign-out successful')
+        setUser(null);
+      })
   };
   const clickNav = (
     <>
@@ -117,9 +109,9 @@ const Navbar = ({ children }) => {
               </label>
             </div>
             <div className="mb-0">
-              <Link onClick={()=>toast.error("This is Home!")} to={"/"} className="flex items-center">
+              <Link to={"/"} className="flex items-center">
                 <img
-                  src="https://i.ibb.co/MCVHxZ3/Talent-hunt.png"
+                  src="https://i.ibb.co/N2tXBqb/Talent-hunt.png"
                   className="h-8 mr-3"
                 />
                 <span className="self-center text-green-500 text-2xl font-extrabold whitespace-nowrap dark:text-white">
@@ -141,7 +133,7 @@ const Navbar = ({ children }) => {
                       tabIndex={0}
                       className="btn btn-ghost btn-circle avatar"
                     >
-                      <div className="w-10 rounded-full">
+                      <div className="w-10 border border-white rounded-full">
                         <img
                           src={
                             user?.photoURL
@@ -170,7 +162,7 @@ const Navbar = ({ children }) => {
                 <NavLink
                   to={"login"}
                   className={
-                    "bg-green-500 border-2 hover:bg-base-300 hover:text-black hover:border-green-700 text-white px-3 font-semibold py-2 rounded-lg"
+                    "bg-green-500 border-2 hover:bg-transparent hover:border-green-700 text-white px-3 font-semibold py-2 rounded-lg"
                   }
                 >
                   <p>Login</p>

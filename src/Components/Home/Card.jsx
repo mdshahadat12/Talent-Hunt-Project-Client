@@ -1,26 +1,24 @@
-const Card = () => {
+import { Link } from "react-router-dom";
+
+/* eslint-disable react/prop-types */
+const Card = ({ data }) => {
+  const { _id, image, name, price, participator, description } = data || {};
   return (
-    // <div className="grid grid-cols-2 gap-10">
-    //     <img style={{aspectRatio:"1:2"}} className="" src="https://i.ibb.co/M8zh8Gm/8.png"/>
-    //     <div className="">
-    //         <h1>Title</h1>
-    //         <h3>designation</h3>
-    //         <p>description</p>
-    //         <button>See More!</button>
-    //     </div>
-    // </div>
     <div className="card lg:card-side bg-base-100 shadow-xl">
-      <div className="p-3">
-        <img
-        className="rounded-xl h-full"
-          src="https://i.ibb.co/M8zh8Gm/8.png"
-        />
+      <div className="p-3 w-[50%] h-[250px]">
+        <img className="rounded-xl w-full h-full" src={image} />
       </div>
-      <div className="card-body">
-        <h2 className="card-title text-2xl font-bold">New album is released!</h2>
-        <p>Click the button to listen on Spotiwhy app.</p>
+      <div className="flex flex-col w-[50%] items-start justify-evenly">
+        <h2 className="card-title text-2xl font-bold">{name}</h2>
+        <p className="text-left">{description?.slice(0,70)} ...</p>
+        <p>Price: {price}</p>
+        <p>Perticepent: {participator}</p>
         <div className="card-actions w-full">
-          <button className="btn w-full btn-primary">See More!</button>
+          <Link to={`/contetst/${_id}`}>
+            <button className="p-1 my rounded-md px-2 bg-green-500">
+              See More!
+            </button>
+          </Link>
         </div>
       </div>
     </div>
