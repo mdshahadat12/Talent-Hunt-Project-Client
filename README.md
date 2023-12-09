@@ -1,8 +1,7 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Contest Management.
+- Link : <a href="https://github.com/mdshahadat12/Talent-Hunt-Project-Client">Client</a> | <a href="https://github.com/mdshahadat12/Talent-Hunt-Project-Server">Server</a> | <a href="https://talent-hunt-project.netlify.app">Live Link</a>
+- Technology: JavaScript, React, Stripe, Firebase, NodeJS, MongoDB
+- Feature:
+4. Admin Role.
+5. Payment System.
+6. Creator Role Management.
