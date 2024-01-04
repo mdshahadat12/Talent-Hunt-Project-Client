@@ -4,6 +4,7 @@
 ## Technology: 
 - JavaScript
 - React
+- Tailwind CSS
 - Stripe
 - Firebase
 - NodeJS
